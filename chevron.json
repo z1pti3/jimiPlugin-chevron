@@ -1,0 +1,59 @@
+{
+    "name" : "chevron",
+    "author" : "z1p",
+    "version" : 0.1,
+    "categories" : ["formatting"],
+    "description" : "Enables chevron template formatting of jimi flow data.",
+    "icon" : null,
+    "requirements" : {
+        "jimi_min_version" : null,
+        "jimi_max_version" : null,
+        "plugins" : []
+    },
+    "collections" : {
+
+    },
+    "triggers" : {
+        
+    },
+    "actions" : {
+        "chevronFormat" : {
+            "display_name" : "chevronFormat",
+            "className" : "_chevronFormat",
+            "class_location" : "models.action",
+            "description" : "Formats an output using a chevron template.",
+            "fields" : [
+                { "schema_item" : "templateData", "schema_value" : "templateData", "type" : "json-input", "label" : "templateData", "description" : "Custom data to used during template rendering.", "required" : true, "jimi_syntax" : true },
+                { "schema_item" : "template", "schema_value" : "template", "type" : "script", "label" : "template", "description" : "A template written in chevron.", "required" : true, "jimi_syntax" : false }
+            ],
+            "data_out" : {
+                "result" : { 
+                    "description" : "Returns True.",
+                    "type" : "boolean",
+                    "always_present" : true,
+                    "values" : {
+                        "True" : { "description" : "Successful." }
+                    }
+                },
+                "rc" : {
+                    "description" : "Returns 0.",
+                    "type" : "number",
+                    "always_present" : true,
+                    "values" : {
+                        "0" : { "description" : "Successful." }
+                    }
+                },
+                "renderedTemplate" : {
+                    "description" : "A string representation of the rendered template.",
+                    "type" : "text",
+                    "always_present" : true,
+                    "values" : {
+                    }
+                }
+            }
+        }
+    },
+    "settings" : {
+
+    }
+}
